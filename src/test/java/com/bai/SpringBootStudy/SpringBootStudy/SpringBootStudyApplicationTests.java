@@ -8,10 +8,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Date;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -31,8 +33,19 @@ class SpringBootStudyApplicationTests {
 
     @Test
     public void getAllUserTest() {
-        // userService.getAllUser().forEach(user -> System.out.println(user));
+         userService.getAllUser().forEach(user -> System.out.println(user));
     }
+
+    @Test
+    void insertUserTest(){
+        User user = new User();
+        user.setName("大黄");
+        user.setAge(3);
+        user.setBir(new Date());
+        userService.insertUser(user);
+    }
+
+
 
     @Test
     public void redisTest() {
@@ -52,7 +65,7 @@ class SpringBootStudyApplicationTests {
 
     @Test
     void rabbitMQTest(){
-        for(int i =0 ;i<2000;i++){
+        for(int i =0 ;i<20;i++){
             rabbitSender.send("这是消息"+i+"这是一个测试的消息！来自【掘金，小阿杰】");
         }
     }

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class RabbitConsumer {
 
 
-    @RabbitListener(bindings = @QueueBinding(
+   /* @RabbitListener(bindings = @QueueBinding(
             value = @Queue(value = RabbitConstant.TEST_QUEUE),
             key = RabbitConstant.TEST_QUEUE_KEY,
             exchange = @Exchange(value = RabbitConstant.TEST_QUEUE_KEE_EXCHANGE)
@@ -20,6 +20,6 @@ public class RabbitConsumer {
     @RabbitHandler()
     public void getMsg(String messageBody, Message message, Channel channel) throws Exception {
         System.out.println(messageBody);
-    }
+    }*/
 
 }

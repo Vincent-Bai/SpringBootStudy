@@ -19,4 +19,11 @@ public class UserServiceImpl implements UserService {
         List<User> allUser = userMapper.getAllUser();
         return allUser;
     }
+
+    //使用mybatis-plus的insert方法写入数据
+    @Override
+    public void insertUser(User user) {
+        int count = userMapper.insert(user);
+        System.out.println("新增条数：" + count);
+    }
 }

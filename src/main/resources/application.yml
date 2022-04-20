@@ -1,0 +1,41 @@
+#mybatis:
+#    mapper-locations: classpath*:mapper/**/*.xml
+server:
+    port: 8888
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://127.0.0.1:3306/mybatis?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+        username: root
+    rabbitmq:
+        host: 127.0.0.1
+        password: admin
+        port: 5672
+        username: admin
+    redis:
+        database: 0
+        host: 127.0.0.1
+        lettuce:
+            pool:
+                max-active: 8
+                max-idle: 8
+                max-wait: -1
+                min-idle: 0
+        port: 6379
+        timeout: 30000
+
+mybatis-plus:
+    global-config:
+        db-config:
+            db-type: mysql
+            id-type: AUTO
+            logic-delete-field: dataState
+            logic-delete-value: 0
+            logic-not-delete-value: 1
+        banner: false
+    mapper-locations: classpath*:mapper/**/*.xml
+    typeAliasesPackage: java.zhang.entity
+    typeEnumsPackage: java.zhan.enums;java.zhan.test.enums
+
