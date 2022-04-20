@@ -39,7 +39,7 @@ class SpringBootStudyApplicationTests {
     @Test
     void insertUserTest(){
         User user = new User();
-        user.setName("大黄");
+        user.setName("妞妞");
         user.setAge(3);
         user.setBir(new Date());
         userService.insertUser(user);
