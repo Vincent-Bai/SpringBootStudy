@@ -23,33 +23,34 @@ class SpringBootStudyApplicationTests {
     @Autowired
     private UserService userService;
 
-    /*   @Autowired
-       private RedisTemplate redisTemplate;*/
     @Autowired
     private RedisUtil redisUtil;
 
     @Autowired
     private RabbitSender rabbitSender;
 
-    @Test
-    public void getAllUserTest() {
-         userService.getAllUser().forEach(user -> System.out.println(user));
-    }
 
     @Test
-    void insertUserTest(){
+    void insertUserTest() {
         User user = new User();
-        user.setName("妞妞");
-        user.setAge(3);
+        user.setName("吴老二");
+        user.setAge(33);
         user.setBir(new Date());
-        userService.insertUser(user);
+        //userService.insertUser(user);
     }
 
+    @Test
+    void getAllUser() {
+        List<User> users = userService.getAllUser();
+        users.forEach(user -> {
+            System.out.println(user.toString());
+        });
+    }
 
 
     @Test
     public void redisTest() {
-        List<User> allUser = userService.getAllUser();
+      /*  List<User> allUser = userService.list();
         ObjectMapper objectMapper = new ObjectMapper();
 
         allUser.forEach(user -> {
@@ -60,13 +61,13 @@ class SpringBootStudyApplicationTests {
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
-        });
+        });*/
     }
 
     @Test
-    void rabbitMQTest(){
-        for(int i =0 ;i<20;i++){
-            rabbitSender.send("这是消息"+i+"这是一个测试的消息！来自【掘金，小阿杰】");
+    void rabbitMQTest() {
+        for (int i = 0; i < 20; i++) {
+            rabbitSender.send("这是消息" + i + "这是一个测试的消息！来自【掘金，小阿杰】");
         }
     }
 

@@ -22,9 +22,9 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("t_user")
-@ApiModel(value="User对象", description="")
-public class User implements Serializable {
+@TableName("t_emp")
+@ApiModel(value="Emp对象", description="")
+public class Emp implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -36,6 +36,8 @@ public class User implements Serializable {
     private Integer age;
 
     private Date bir;
+
+    private Integer deptid;
 
 
 }

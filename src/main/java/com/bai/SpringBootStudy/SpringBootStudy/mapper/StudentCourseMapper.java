@@ -1,6 +1,6 @@
 package com.bai.SpringBootStudy.SpringBootStudy.mapper;
 
-import com.bai.SpringBootStudy.SpringBootStudy.module.User;
+import com.bai.SpringBootStudy.SpringBootStudy.module.StudentCourse;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author BaiYe
  * @since 2022-04-20
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface StudentCourseMapper extends BaseMapper<StudentCourse> {
 
 }
