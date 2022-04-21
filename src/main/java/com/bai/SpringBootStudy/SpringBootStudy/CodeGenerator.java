@@ -8,9 +8,6 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import jdk.nashorn.internal.objects.Global;
-
-import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,7 +98,6 @@ public class CodeGenerator {
         strategyConfigInfo.setTablePrefix("t_");
         //rest风格
         strategyConfigInfo.setRestControllerStyle(true);
-
         return strategyConfigInfo;
     }
 
@@ -133,7 +129,5 @@ public class CodeGenerator {
         });
         injectionConfig.setFileOutConfigList(focList);
         return injectionConfig;
-
-
     }
 }
