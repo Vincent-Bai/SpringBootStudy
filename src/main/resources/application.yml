@@ -40,6 +40,4 @@ mybatis-plus:
             logic-not-delete-value: 1
         banner: false
     mapper-locations: classpath*:mapper/**/*.xml
-    typeAliasesPackage: java.zhang.entity
-    typeEnumsPackage: java.zhan.enums;java.zhan.test.enums
 

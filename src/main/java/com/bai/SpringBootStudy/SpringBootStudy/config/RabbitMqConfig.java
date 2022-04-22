@@ -1,6 +1,5 @@
 package com.bai.SpringBootStudy.SpringBootStudy.config;
 
-import com.bai.SpringBootStudy.SpringBootStudy.constant.RabConstant;
 import com.bai.SpringBootStudy.SpringBootStudy.constant.RabbitConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
