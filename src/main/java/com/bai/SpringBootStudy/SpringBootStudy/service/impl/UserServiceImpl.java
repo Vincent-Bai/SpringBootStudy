@@ -27,8 +27,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public Integer insertUser(User user) {
-        int count = userMapper.insert(user);
-        return count;
+        long a=10/0;
+        return 0;
+       /* int count = userMapper.insert(user);
+        return count;*/
     }
 
     @Override

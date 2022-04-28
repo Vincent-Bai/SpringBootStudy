@@ -3,6 +3,8 @@
 server:
     port: 8888
 spring:
+    mvc:
+        throw-exception-if-no-handler-found: true
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         password: 123456
@@ -29,6 +31,9 @@ spring:
                 min-idle: 0
         port: 6379
         timeout: 30000
+    web:
+        resources:
+            add-mappings: false
 
 mybatis-plus:
     global-config:

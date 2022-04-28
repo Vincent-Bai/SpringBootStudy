@@ -23,6 +23,7 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
+    /*成功处理*/
     public static <T> Result<T> success() {
         return new Result<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), null);
     }
@@ -31,16 +32,25 @@ public class Result<T> implements Serializable {
         return new Result<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
     }
 
+    /*失败处理*/
     public static <T> Result<T> faild(String message) {
-        return new Result<>(ResultCode.INTERNAL_ERROR.getCode(), message, null);
+        return new Result<>(ResultCode.INTERNAL_SERVER_ERROR.getCode(), message, null);
+    }
+
+    public static <T> Result<T> faild(Integer code, String message) {
+        return new Result<>(code, message, null);
     }
 
     public static <T> Result<T> faild(String message, T data) {
-        return new Result<>(ResultCode.INTERNAL_ERROR.getCode(), message, data);
+        return new Result<>(ResultCode.INTERNAL_SERVER_ERROR.getCode(), message, data);
     }
 
     public static <T> Result<T> faild(ResultCode resultCode) {
         return new Result<>(resultCode.getCode(), resultCode.getMessage(), null);
+    }
+
+    public static <T> Result<T> faild(ResultCode resultCode, String message) {
+        return new Result<>(resultCode.getCode(), message, null);
     }
 
     public static <T> Result<T> faild(ResultCode resultCode, T data) {
