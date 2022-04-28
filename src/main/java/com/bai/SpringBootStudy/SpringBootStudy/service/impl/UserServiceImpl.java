@@ -27,10 +27,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public Integer insertUser(User user) {
-        long a=10/0;
-        return 0;
-       /* int count = userMapper.insert(user);
-        return count;*/
+        int count = userMapper.insert(user);
+        return count;
     }
 
     @Override
@@ -38,5 +36,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         QueryWrapper queryWrapper = new QueryWrapper();
         List<User> users = userMapper.selectList(queryWrapper);
         return users;
+    }
+
+    @Override
+    public User getUserForName(String name){
+        QueryWrapper queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("name",name);
+        User user = userMapper.selectOne(queryWrapper);
+        return user;
     }
 }

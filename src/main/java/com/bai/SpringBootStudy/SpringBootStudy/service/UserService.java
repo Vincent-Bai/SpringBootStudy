@@ -20,4 +20,11 @@ public interface UserService extends IService<User> {
     Integer insertUser(User user);
 
     List<User>  getAllUser();
+
+    /**
+     * 根据用户名查询用户对象
+     * @param name
+     * @return 用户实体
+     */
+    User getUserForName(String name);
 }
