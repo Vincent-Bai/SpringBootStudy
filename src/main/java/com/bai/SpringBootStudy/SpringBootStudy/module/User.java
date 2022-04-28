@@ -31,10 +31,13 @@ public class User implements Serializable {
     @Null(message="id必须为空")
     private Integer id;
 
-    @NotNull(message = "用户账号不能为空")
-    @Size(min = 6, max = 11, message = "账号长度必须是6-11个字符")
+    @NotNull(message = "用户名不能为空")
+    @Size(min = 6, max = 11, message = "用户名长度必须是4-11个字符")
     private String name;
 
+    @Min(value=1,message="年龄最小值为1")
+    @Max(value=120,message="年龄最大值为120")
+    @NotNull(message="年龄不能为空")
     private Integer age;
 
     @Future

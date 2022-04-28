@@ -17,6 +17,7 @@ public enum ResultCode {
 
     /* 业务状态码 */
     USER_NOT_EXIST_ERROR(10001,"用户不存在"),
+    VALIDATE_FAILED(10002, "参数校验失败"),
 
     //未知异常
     UNKNOWN(10000,"未知异常!"),
