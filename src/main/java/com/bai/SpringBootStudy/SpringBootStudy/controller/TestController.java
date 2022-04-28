@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -46,8 +47,13 @@ public class TestController {
 
     @ApiOperation("insert")
     @PostMapping("insert")
-    public void addUser(@Valid @RequestBody User user){
-
+    public User addUser(@Valid @RequestBody User user){
+        User newUser = new User();
+        newUser.setName("老四");
+        newUser.setAge(19);
+        newUser.setBir(new Date());
+        newUser.setId(22);
+        return newUser;
     }
 
 

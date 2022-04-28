@@ -32,7 +32,7 @@ public class User implements Serializable {
     private Integer id;
 
     @NotNull(message = "用户名不能为空")
-    @Size(min = 6, max = 11, message = "用户名长度必须是4-11个字符")
+    @Size(min = 6, max = 11, message = "用户名长度必须是6-11个字符")
     private String name;
 
     @Min(value=1,message="年龄最小值为1")
